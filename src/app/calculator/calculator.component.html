@@ -1,0 +1,8 @@
+<input type="text" [(ngModel)]="inputValue" placeholder="Нажмите кнопку">
+<mat-grid-list cols="3" rowHeight="100px" gutterSize="10px">
+    <mat-grid-tile *ngFor="let button of buttons">
+      <button mat-button [color]="button.color">
+        {{ button.text }}
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
