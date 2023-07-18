@@ -1,8 +1,15 @@
-<input type="text" [(ngModel)]="inputValue" placeholder="Нажмите кнопку">
-<mat-grid-list cols="3" rowHeight="100px" gutterSize="10px">
-    <mat-grid-tile *ngFor="let button of buttons">
-      <button mat-button [color]="button.color">
-        {{ button.text }}
+<mat-grid-list cols="4" rowHeight="64px" [gutterSize]="'10px'">
+    <mat-grid-tile 
+    *ngFor="let tile of buttons"
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows">
+      <div class = 'field' *ngIf="tile.type ==='field'">{{this.total}}</div>
+      <button
+      mat-stroked-button 
+      *ngIf="tile.type === 'button'"
+      [color]="tile.color"
+      (click)="eventClick(tile.click, tile.text)">
+      {{tile.text}}
       </button>
     </mat-grid-tile>
   </mat-grid-list>

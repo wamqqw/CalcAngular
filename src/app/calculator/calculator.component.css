@@ -2,3 +2,7 @@ mat-grid-list {
     width: 300px;
     margin-bottom: 10px;
 }
+button {
+    background-color: rgb(222, 208, 129);
+    color: black;
+}
